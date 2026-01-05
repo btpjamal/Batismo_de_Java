@@ -1,7 +1,8 @@
-package NIvelIntermediario;
+package NIvelIntermediario.Herança;
 
 public class Main {
-    static void main() {
+   public static void main(String[] args) {
+
 
         //objeto 1
         Uzumaki Naruto= new Uzumaki();
@@ -30,6 +31,14 @@ public class Main {
         Hinata.idade= 16;
         Hinata.aldeia= "Aldeia da folha";
         Hinata.byakuganAtivado();
+
+        HyugaUzumaki Boruto= new HyugaUzumaki();
+        Boruto.nome= "Boruto";
+        Boruto.idade= 15;
+        Boruto.aldeia= "Aldeia da Folha";
+        Boruto.ModoSabioAtivado();
+        Boruto.AtivarKarma();
+        Boruto.AtivarJougan();
     }
 }
 

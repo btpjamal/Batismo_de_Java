@@ -1,4 +1,4 @@
-package NIvelIntermediario;
+package NIvelIntermediario.Herança;
 
 public class Hyuga extends Ninja{
     public void byakuganAtivado(){

@@ -1,4 +1,4 @@
-package NIvelIntermediario;
+package NIvelIntermediario.Herança;
 
 public class Haruno extends Ninja{
     public void ativarCura(){

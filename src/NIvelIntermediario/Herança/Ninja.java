@@ -1,4 +1,4 @@
-package NIvelIntermediario;
+package NIvelIntermediario.Herança;
 
 public class Ninja{
     String nome;
