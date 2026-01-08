@@ -14,6 +14,21 @@ public class Uchiha extends Ninja implements SharinganInterface, KageInterface{
     }
 
     @Override
+    public void Sharingan(int tipo) {
+        switch (tipo){
+            case 1:
+                System.out.println("Sharingan normal");
+                break;
+            case 2:
+                System.out.println("Magekyou Sharingan");
+                break;
+            case 3:
+                System.out.println("Rinnegan");
+                break;
+        }
+    }
+
+    @Override
     public void Infos() {
         super.Infos();
         Hokage();
