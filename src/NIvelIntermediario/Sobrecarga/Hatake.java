@@ -24,7 +24,6 @@ public class Hatake extends Ninja implements SharinganInterface, KageInterface, 
         Anbu();
         Hokage();
         Sharingan();
-        System.out.println(rank.getDescricao());
     }
 
     public Hatake() {

@@ -7,6 +7,11 @@ public abstract class Ninja {
 
     public void Infos(){
         System.out.println("Nome: "+ nome + ", Idade: "+ idade);
+        if (this.rank != null){
+            System.out.println(rank.getDescricao());
+        } else {
+            System.out.println("Sem Rank");
+        }
     }
 
     // construtor vazio

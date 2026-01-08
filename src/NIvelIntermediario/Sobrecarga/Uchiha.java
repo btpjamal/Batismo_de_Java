@@ -18,7 +18,6 @@ public class Uchiha extends Ninja implements SharinganInterface, KageInterface{
         super.Infos();
         Hokage();
         Sharingan();
-        System.out.println(rank.getDescricao());
     }
 
     // construtor vazio
