@@ -1,27 +1,45 @@
 package NIvelIntermediario.Desafio5;
 
-public abstract class ContaBancaria implements Conta{
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class ContaBancaria implements ContaInterface{
 
     double saldo;
-    TipoConta tipoConta;
+    List<Double> extratoList= new ArrayList<>();
 
-    public ContaBancaria(TipoConta tipoConta, double saldo) {
-        this(saldo);
-        this.tipoConta = tipoConta;
-    }
+    @Override
+    public void sacar(double valor) {
+        if (saldo >= valor){
+            saldo -= valor;
+            extratoList.add(saldo);
+            System.out.println("Saque: "+ valor);
+        }
 
-    public ContaBancaria(double saldo) {
-        this.saldo = saldo;
-    }
-
-    public ContaBancaria() {
     }
 
     @Override
-    public void consultarSaldo() {
-        System.out.println("Saldo: "+ this.saldo);
+    public void depositar(double valor) {
+        saldo += valor;
+        extratoList.add(saldo);
+        System.out.println("Deposito: "+ valor);
     }
 
     @Override
-    public abstract void depositar(double valor);
+    public void depositar(double valor, ContaBancaria destino) {
+        saldo += valor;
+        extratoList.add(saldo);
+        System.out.println("Deposito de: "+ valor+ ", para: "+destino);
+    }
+
+    @Override
+    public void transferir(double valor, ContaBancaria destino) {
+        sacar(valor);
+        destino.depositar(valor, destino);
+    }
+
+    @Override
+    public void extrato() {
+        System.out.println(extratoList);
+    }
 }
