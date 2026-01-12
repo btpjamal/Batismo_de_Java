@@ -9,7 +9,6 @@ public class Main{
 
         System.out.println("text - iniciar; sair;");
         String userStart= scan.nextLine();
-
         if (userStart.equals("iniciar")){
             metodos.iniciar();
             metodos.operacoes();

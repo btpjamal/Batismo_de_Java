@@ -1,6 +1,6 @@
 package NIvelIntermediario.Desafio5;
 
-public class ContaBancaria extends Metodos{
+public abstract class ContaBancaria extends Metodos{
     private String numero;
     private String titular;
     private double saldo;
@@ -36,8 +36,7 @@ public class ContaBancaria extends Metodos{
 
     @Override
     public String toString() {
-        return "ContaBancaria{" +
-                "numero='" + numero + '\'' +
+        return "Conta -> " + "numero='" + numero + '\'' +
                 ", titular='" + titular + '\'' +
                 '}';
     }
