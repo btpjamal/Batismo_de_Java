@@ -1,6 +1,6 @@
 package NIvelIntermediario.Desafio5;
 
-public class ContaBancaria extends metodos{
+public class ContaBancaria extends Metodos{
     private String numero;
     private String titular;
     private double saldo;
@@ -14,6 +14,14 @@ public class ContaBancaria extends metodos{
     public ContaBancaria() {
     }
 
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
     public String getNumero() {
         return numero;
     }
@@ -24,5 +32,13 @@ public class ContaBancaria extends metodos{
 
     public double getSaldo() {
         return saldo;
+    }
+
+    @Override
+    public String toString() {
+        return "ContaBancaria{" +
+                "numero='" + numero + '\'' +
+                ", titular='" + titular + '\'' +
+                '}';
     }
 }

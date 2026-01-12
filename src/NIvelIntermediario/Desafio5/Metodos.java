@@ -2,7 +2,7 @@ package NIvelIntermediario.Desafio5;
 
 import java.util.*;
 
-public class metodos {
+public class Metodos {
     private String numero;
     private String titular;
     private double saldo;
@@ -23,25 +23,34 @@ public class metodos {
 
     public void iniciar(){
         ContaBancaria contaBancaria= new ContaBancaria();
+        System.out.println("Número da conta: ");
+        String numeroConta= scanner.nextLine();
+        contaBancaria.setNumero(numeroConta);
+        System.out.println("Titular: ");
+        String titular= scanner.nextLine();
+        contaBancaria.setTitular(titular);
+        adicionarConta(contaBancaria);
         System.out.println("conta criada pelo iniciar()");
     }
     public void operacoes(){
-        System.out.println("1-sacar;2-depositar;3-transferir;4-extrato;");
+        System.out.println("1- Sacar; 2- Depositar; 3- Transferir; 4- Extrato; 5- Criar nova conta; 6- Sair");
         int userChose= scanner.nextInt();
         switch (userChose){
             case 1:
                 System.out.print("Valor a ser sacado: ");
                 double userValueSaque= scanner.nextDouble();
                 sacar(userValueSaque);
-                break;
+                operacoes();
             case 2:
                 System.out.print("Valor a ser depositado: ");
                 double userValueDeposito= scanner.nextDouble();
                 depositar(userValueDeposito);
-                break;
+                operacoes();
             case 3:
                 System.out.print("Valor a ser transferido: ");
                 double userValueTransferencia= scanner.nextDouble();
+                scanner.nextLine();
+                System.out.println(contasMap);
                 System.out.print("Conta destino transferência: ");
                 String numeroContaDestino= scanner.nextLine();
 
@@ -50,11 +59,20 @@ public class metodos {
                 if(destino != null){
                     System.out.println("Conta encontrada: "+ destino.getTitular());
                     transferir(userValueTransferencia, destino);
-                    break;
+                    operacoes();
                 } else {
                     System.out.println("Conta não encontrada");
                     operacoes();
                 }
+            case 4:
+                extrato();
+                operacoes();
+            case 5:
+                iniciar();
+                operacoes();
+            case 6:
+                System.out.println("Fim do programa");
+                break;
         }
     }
     public void sacar(double valor){
