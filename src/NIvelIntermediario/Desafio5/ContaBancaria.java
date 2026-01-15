@@ -34,6 +34,10 @@ public abstract class ContaBancaria extends Metodos{
         return saldo;
     }
 
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
     @Override
     public String toString() {
         return "Conta -> " + "numero='" + numero + '\'' +

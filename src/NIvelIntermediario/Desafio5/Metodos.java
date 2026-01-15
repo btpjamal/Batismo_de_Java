@@ -60,16 +60,24 @@ public class Metodos {
             case 1:
                 System.out.print("Valor a ser sacado: ");
                 double userValueSaque= scanner.nextDouble();
+                scanner.nextLine();
                 // de qual conta vai sacar?
-
-                sacar(userValueSaque);
+                System.out.print("Conta a ser sacada: ");
+                System.out.println(contasMap);
+                String contaSaque= scanner.nextLine();
+                ContaBancaria origemSaque= buscarConta(contaSaque);
+                sacar(userValueSaque, origemSaque);
                 operacoes();
             case 2:
                 System.out.print("Valor a ser depositado: ");
                 double userValueDeposito= scanner.nextDouble();
+                scanner.nextLine();
                 // pra qual conta vai depositar?
-
-                depositar(userValueDeposito);
+                System.out.println(contasMap);
+                System.out.print("Conta a ser depositada: ");
+                String contaDeposito= scanner.nextLine();
+                ContaBancaria contaDestinoDeposito = buscarConta(contaDeposito);
+                depositar(userValueDeposito, contaDestinoDeposito);
                 operacoes();
             case 3:
                 System.out.print("Valor a ser transferido: ");
@@ -89,7 +97,7 @@ public class Metodos {
                 if(origem != null && destino != null){
                     System.out.println("Conta Origem encontrada: "+ origem.getTitular());
                     System.out.println("Conta Destino encontrada: "+ destino.getTitular());
-                    transferir(userValueTransferencia,//implementar origem, destino);
+                    transferir(userValueTransferencia, origem, destino);
                     operacoes();
                 } else {
                     System.out.println("Conta não encontrada");
@@ -108,22 +116,28 @@ public class Metodos {
         }
     }
     public void sacar(double valor, ContaBancaria origem){
-        if (saldo>= valor){
-           double operacao= saldo -= valor;
-           extratoList.add(operacao);
-        }
-    }
-    public void depositar(double valor){
-       double operacao= saldo+= valor;
-       extratoList.add(operacao);
-    }
-    public void transferir(double valor,ContaBancaria origem ,ContaBancaria destino){
-        sacar(valor, origem);
-        destino.depositar(valor);
-        extratoList.add(operacao);
-    }
-    public void extrato(){
-        System.out.println(extratoList);
+        if (origem.getSaldo()>= valor) {
+            origem.setSaldo(origem.getSaldo() - valor);
+            extratoList.add(valor);
+        } else {
+            System.out.println("Saldo insulficiente na conta Origem!");
+            }
     }
 
+    public void depositar(double valor, ContaBancaria destinoDeposito){
+       destinoDeposito.setSaldo(destinoDeposito.getSaldo() + valor);
+       extratoList.add((valor));
+    }
+    public void transferir(double valor,ContaBancaria origem ,ContaBancaria destino) {
+        if (origem.getSaldo() >= valor) {
+            origem.setSaldo(origem.getSaldo() - valor);
+            destino.setSaldo(destino.getSaldo() + valor);
+            extratoList.add(valor);
+        } else {
+            System.out.println("Saldo insulficiente na conta origem!");
+        }
+    }
+    public void extrato() {
+            System.out.println(extratoList);
+    }
 }
