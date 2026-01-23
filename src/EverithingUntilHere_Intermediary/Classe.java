@@ -1,6 +1,6 @@
 package EverithingUntilHere_Intermediary;
 
-public enum Class {
+public enum Classe {
     WARRIOR("Guerreiro de porte médio, intermédio entre defesa e ataque", "Espadas médias e escudos"),
     ASSASSIN("Guerreiro de porte leve, possui melhor furtividade", "Adagas e facas de arremesso"),
     MAGE("Guerreiro de porte leve, afinidade com margias arcanas e encantamentos", "Cajados e pergaminhos");
@@ -8,11 +8,11 @@ public enum Class {
     private String descricao;
     private String escalabilidadeArmas;
 
-    Class(String descricao) {
+    Classe(String descricao) {
         this.descricao = descricao;
     }
 
-    Class(String descricao, String escalabilidadeArmas) {
+    Classe(String descricao, String escalabilidadeArmas) {
         this.descricao = descricao;
         this.escalabilidadeArmas = escalabilidadeArmas;
     }
@@ -26,6 +26,6 @@ public enum Class {
     }
 
     public String descricaoCompleta(){
-        return Class.this +": "+ getDescricao() +" / armas: "+ getEscalabilidadeArmas();
+        return Classe.this +": "+ getDescricao() +" / armas: "+ getEscalabilidadeArmas();
     }
 }

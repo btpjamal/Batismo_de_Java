@@ -3,6 +3,7 @@ package EverithingUntilHere_Intermediary;
 public abstract class Character {
     private String nome;
     private double vida;
+    private boolean escudoLevantado = false;
 
     public String getNome() {
         return nome;
@@ -20,7 +21,16 @@ public abstract class Character {
         this.vida = vida;
     }
 
-    public Character(String nome) {
+    public Character(String nome, double vida) {
         this.nome = nome;
+        this.vida = vida;
+    }
+
+    public void receberAtaque(double dano){
+        if (escudoLevantado){
+            dano /= 2;
+            escudoLevantado = false;
+        }
+        setVida(getVida() - dano);
     }
 }
