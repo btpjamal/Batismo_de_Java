@@ -1,5 +1,8 @@
 package EverithingUntilHere_Intermediary;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main{
@@ -20,17 +23,17 @@ public class Main{
                 System.out.println("Personagem da classe Warrior criado");
                 break;
             case "mage":
-                jogador = new Mage(nomePersonagem);
+                jogador = new Mage(nomePersonagem, 300);
                 System.out.println("Personagem da classe Mage criado");
                 break;
             case "assassin":
-                jogador = new Assassin(nomePersonagem);
+                jogador = new Assassin(nomePersonagem, 250);
                 System.out.println("Personagem da classe Assassin criado");
                 break;
         }
         // sumonnando os inimigos
-
-        Enemy inimigo = new Enemy();
+        Enemy inimigo = new Enemy("inimigo", 300);
+        System.out.println("Inimigo sumonado!");
 
         // colocando pra fightar
 
@@ -39,5 +42,17 @@ public class Main{
         } else {
             System.out.println("O inimigo foi atingido");
         }
+        // criar turnos de rodada
+        while (jogador.getVida() != 0 || inimigo.getVida() != 0){
+             // lógica das rodadas aqui
+            // aleatório quem começa
+            List<Integer> roundStart= new ArrayList<>();
+
+
+
+        }
+        // criar aleatoriedade nos ataques inimigos
+
+        // criar opcao de ataque do jogador, 1, 2 ou 3
     }
 }

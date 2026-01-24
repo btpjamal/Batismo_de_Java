@@ -1,7 +1,7 @@
 package EverithingUntilHere_Intermediary;
 
 public class Warrior extends Character implements WarriorInterface{
-    private Enemy inimigo;
+
     boolean escudoLevantado= false;
 
     public Warrior(String nome, double vida) {
@@ -10,6 +10,7 @@ public class Warrior extends Character implements WarriorInterface{
 
     @Override
     public void ataqueComEspadaFlamejante(Enemy inimigo) {
+        inimigo.setVida(inimigo.getVida() - 50);
         System.out.println("Ataque com espada flamejante");
     }
 

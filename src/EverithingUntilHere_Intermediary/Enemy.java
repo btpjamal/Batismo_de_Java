@@ -1,12 +1,12 @@
 package EverithingUntilHere_Intermediary;
 
 public class Enemy extends Character implements EnemyInterface{
-    private boolean escudoLevantado = false;
+    boolean escudoLevantado= false;
 
-    public Enemy() {
-        super("inimigo");
-        setVida(300);
+    public Enemy(String nome, double vida) {
+        super(nome, vida);
     }
+
 
     @Override
     public void sequenciaDeAtaques(Character jogador) {
@@ -24,7 +24,7 @@ public class Enemy extends Character implements EnemyInterface{
 
     @Override
     public boolean defenderComEscudo(Character jogador) {
-        escudoLevantado= true;
+        escudoLevantado = true;
         System.out.println("Inimigo levantou o escudo");
         return true;
     }

@@ -4,6 +4,7 @@ public abstract class Character {
     private String nome;
     private double vida;
     private boolean escudoLevantado = false;
+    private Enemy inimigo;
 
     public String getNome() {
         return nome;
