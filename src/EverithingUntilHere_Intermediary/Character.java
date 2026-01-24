@@ -34,4 +34,8 @@ public abstract class Character {
         }
         setVida(getVida() - dano);
     }
+    public abstract void exibirHabilidades();
+    public abstract void habilidade1(Enemy inimigo);
+    public abstract void habilidade2(Enemy inimigo);
+    public abstract void habilidade3(Enemy inimigo);
 }

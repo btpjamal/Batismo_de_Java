@@ -1,13 +1,13 @@
 package EverithingUntilHere_Intermediary;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class Main{
     public static void main(String[] args) {
+
         Scanner scan = new Scanner(System.in);
+
         System.out.println("Criação de personagem");
         System.out.print("Nome: ");
         String nomePersonagem= scan.nextLine();
@@ -32,27 +32,48 @@ public class Main{
                 break;
         }
         // sumonnando os inimigos
-        Enemy inimigo = new Enemy("inimigo", 300);
+        Enemy inimigo = new Enemy(300);
         System.out.println("Inimigo sumonado!");
 
         // colocando pra fightar
 
-        if (inimigo.defenderComEscudo(jogador)){
-            System.out.println("O inimigo defendeu o ataque");
-        } else {
-            System.out.println("O inimigo foi atingido");
-        }
         // criar turnos de rodada
-        while (jogador.getVida() != 0 || inimigo.getVida() != 0){
-             // lógica das rodadas aqui
-            // aleatório quem começa
-            List<Integer> roundStart= new ArrayList<>();
-
-
-
+        Random random = new Random();
+        while (jogador.getVida() >=0 || inimigo.getVida() >= 0) {
+            int roundStart = random.nextInt(1, 3);
+            if (roundStart == 1) {
+                System.out.println("jogador inicia o turno");
+                assert jogador != null;
+                jogador.exibirHabilidades();
+                int opcao = scan.nextInt();
+                switch (opcao) {
+                    case 1:
+                        jogador.habilidade1(inimigo);
+                        break;
+                    case 2:
+                        jogador.habilidade2(inimigo);
+                        break;
+                    case 3:
+                        jogador.habilidade3(inimigo);
+                        break;
+                }
+            } else {
+                System.out.println("inimigo inicia o turno");
+                int opcaoInimigo = random.nextInt(1, 4);
+                switch (opcaoInimigo) {
+                    case 1:
+                        assert jogador != null;
+                        inimigo.habilidade1(jogador);
+                        break;
+                    case 2:
+                        assert jogador != null;
+                        inimigo.habilidade2(jogador);
+                        break;
+                    case 3:
+                        inimigo.habilidade3(jogador);
+                        break;
+                }
+            }
         }
-        // criar aleatoriedade nos ataques inimigos
-
-        // criar opcao de ataque do jogador, 1, 2 ou 3
     }
 }

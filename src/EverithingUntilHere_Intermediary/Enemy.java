@@ -1,31 +1,35 @@
 package EverithingUntilHere_Intermediary;
 
-public class Enemy extends Character implements EnemyInterface{
+public class Enemy{
+    private double vida;
     boolean escudoLevantado= false;
 
-    public Enemy(String nome, double vida) {
-        super(nome, vida);
+    public Enemy(double vida) {
+        this.vida=vida;
     }
 
+    public double getVida() {
+        return vida;
+    }
 
-    @Override
-    public void sequenciaDeAtaques(Character jogador) {
+    public void setVida(double vida) {
+        this.vida = vida;
+    }
+
+    public void habilidade1(Character jogador) {
         System.out.println("Executando sequencia de ataques");
         jogador.setVida(jogador.getVida() -50);
         System.out.println("Vida do jogador: "+ jogador.getVida());
     }
 
-    @Override
-    public void arremessarAdaga(Character jogador) {
+    public void habilidade2(Character jogador) {
         System.out.println("Arremessando adaga");
         jogador.setVida(jogador.getVida() -50);
         System.out.println("Vida do jogador: "+ jogador.getVida());
     }
 
-    @Override
-    public boolean defenderComEscudo(Character jogador) {
+    public void habilidade3(Character jogador) {
         escudoLevantado = true;
         System.out.println("Inimigo levantou o escudo");
-        return true;
     }
 }

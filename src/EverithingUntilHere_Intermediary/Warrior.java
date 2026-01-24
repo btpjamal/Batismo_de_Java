@@ -1,6 +1,6 @@
 package EverithingUntilHere_Intermediary;
 
-public class Warrior extends Character implements WarriorInterface{
+public class Warrior extends Character{
 
     boolean escudoLevantado= false;
 
@@ -9,19 +9,28 @@ public class Warrior extends Character implements WarriorInterface{
     }
 
     @Override
-    public void ataqueComEspadaFlamejante(Enemy inimigo) {
-        inimigo.setVida(inimigo.getVida() - 50);
-        System.out.println("Ataque com espada flamejante");
+    public void exibirHabilidades() {
+        System.out.println("1- Ataque com espada flamejante");
+        System.out.println("2- Defender com escudo");
+        System.out.println("3- Aprimorar resistência");
     }
 
     @Override
-    public void defesaComEscudo(Enemy inimigo) {
+    public void habilidade1(Enemy inimigo) {
+        System.out.println("Ataque com espada flamejante");
+        inimigo.setVida(inimigo.getVida() - 50);
+    }
+
+    @Override
+    public void habilidade2(Enemy inimigo) {
         System.out.println("Defesa com escudo");
         escudoLevantado = true;
     }
 
     @Override
-    public void resistenciaAprimorada(Enemy inimigo) {
+    public void habilidade3(Enemy inimigo) {
+        System.out.println("3- Aprimorar resistência");
+        setVida(getVida() + 50);
         System.out.println("Resistencia aprimorada, + vigor");
     }
 }
