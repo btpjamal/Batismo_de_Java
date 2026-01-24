@@ -29,7 +29,7 @@ public class Warrior extends Character{
 
     @Override
     public void habilidade3(Enemy inimigo) {
-        System.out.println("3- Aprimorar resistência");
+        System.out.println("Aprimorar resistência");
         setVida(getVida() + 50);
         System.out.println("Resistencia aprimorada, + vigor");
     }

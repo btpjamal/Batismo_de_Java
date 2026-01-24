@@ -49,12 +49,18 @@ public class Main{
                 switch (opcao) {
                     case 1:
                         jogador.habilidade1(inimigo);
+                        System.out.println("Vida jogador: "+ jogador.getVida());
+                        System.out.println("Vida inimigo: "+ inimigo.getVida());
                         break;
                     case 2:
                         jogador.habilidade2(inimigo);
+                        System.out.println("Vida jogador: "+ jogador.getVida());
+                        System.out.println("Vida inimigo: "+ inimigo.getVida());
                         break;
                     case 3:
                         jogador.habilidade3(inimigo);
+                        System.out.println("Vida jogador: "+ jogador.getVida());
+                        System.out.println("Vida inimigo: "+ inimigo.getVida());
                         break;
                 }
             } else {
@@ -64,13 +70,19 @@ public class Main{
                     case 1:
                         assert jogador != null;
                         inimigo.habilidade1(jogador);
+                        System.out.println("Vida jogador: "+ jogador.getVida());
+                        System.out.println("Vida inimigo: "+ inimigo.getVida());
                         break;
                     case 2:
                         assert jogador != null;
                         inimigo.habilidade2(jogador);
+                        System.out.println("Vida jogador: "+ jogador.getVida());
+                        System.out.println("Vida inimigo: "+ inimigo.getVida());
                         break;
                     case 3:
                         inimigo.habilidade3(jogador);
+                        System.out.println("Vida jogador: "+ jogador.getVida());
+                        System.out.println("Vida inimigo: "+ inimigo.getVida());
                         break;
                 }
             }

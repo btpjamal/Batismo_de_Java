@@ -19,13 +19,11 @@ public class Enemy{
     public void habilidade1(Character jogador) {
         System.out.println("Executando sequencia de ataques");
         jogador.setVida(jogador.getVida() -50);
-        System.out.println("Vida do jogador: "+ jogador.getVida());
     }
 
     public void habilidade2(Character jogador) {
         System.out.println("Arremessando adaga");
         jogador.setVida(jogador.getVida() -50);
-        System.out.println("Vida do jogador: "+ jogador.getVida());
     }
 
     public void habilidade3(Character jogador) {
