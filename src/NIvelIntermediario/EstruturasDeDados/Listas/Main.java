@@ -1,7 +1,8 @@
-package NIvelIntermediario.Listas;
+package NIvelIntermediario.EstruturasDeDados.Listas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,5 +35,21 @@ public class Main {
 
         // tamanho da lista
         System.out.println("Tamanho da lista: "+stringList.size());
+
+        // Stack, é uma pilha, o ultimo a entrar é o primeiro a sair
+
+        Stack<Integer> stack = new Stack<>();
+        stack.push(0);
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        System.out.println(stack);
+
+        stack.pop();
+
+        System.out.println(stack);
+
+        System.out.println(stack.peek());
     }
 }
