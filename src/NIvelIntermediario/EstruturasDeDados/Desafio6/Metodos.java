@@ -27,11 +27,49 @@ public class Metodos extends Ninja{
             scan.nextLine();
         }
     }
+
     public void remover(){
         System.out.println("Remover");
-        System.out.println("Lista atual: "+ ninjaLinkedList);
-        System.out.print("Pessoa a ser removida: ");
-        String ninjaRemover= scan.nextLine();
+        for (int i = 0; i < ninjaLinkedList.size(); i++) {
+            System.out.println(i+ " " +ninjaLinkedList.get(i));
+        }
+        System.out.print("Numero da pessoa a ser removida: ");
+        int ninjaRemover= scan.nextInt();
         ninjaLinkedList.remove(ninjaRemover);
+    }
+
+    public void acessar(){
+        System.out.println("Acessar");
+        for (int i = 0; i < ninjaLinkedList.size(); i++) {
+            System.out.println(i);
+        }
+        System.out.print("Numero da pessoa a ser acessada: ");
+        int ninjaAcessar= scan.nextInt();
+        Ninja escolhido= ninjaLinkedList.get(ninjaAcessar);
+        System.out.println("Nome: "+escolhido.getNome());
+        System.out.println("Idade: "+escolhido.getIdade());
+        System.out.println("Vila: "+escolhido.getVila());
+    }
+
+    public void alterar(){
+        System.out.println("Alterar");
+        for (int i = 0; i < ninjaLinkedList.size(); i++) {
+            System.out.println(i);
+        }
+        System.out.print("Numero da pessoa a ser alterada: ");
+        int ninjaAlterar= scan.nextInt();
+        scan.nextLine();
+        Ninja escolhido= ninjaLinkedList.get(ninjaAlterar);
+        System.out.print("Novo nome: ");
+        String novoNome= scan.nextLine();
+        escolhido.setNome(novoNome);
+        System.out.print("Nova idade: ");
+        int novaIdade= scan.nextInt();
+        scan.nextLine();
+        escolhido.setIdade(novaIdade);
+        System.out.println("Nova vila: ");
+        String novaVila= scan.nextLine();
+        escolhido.setVila(novaVila);
+        System.out.println("Ninja atualizado: "+ escolhido.toString());
     }
 }

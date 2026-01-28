@@ -11,7 +11,7 @@ public class Main {
 
         while (userInput != 2){
             System.out.println("Lista atual: "+ metodos.ninjaLinkedList);
-            System.out.println("1- Adicionar; 2- Remover; 3- Acessar elementos");
+            System.out.println("1- Adicionar; 2- Remover; 3- Acessar elementos; 4- Alterar");
             int option= scan.nextInt();
             scan.nextLine();
             switch (option){
@@ -22,9 +22,13 @@ public class Main {
                     metodos.remover();
                     break;
                 case 3:
+                    metodos.acessar();
+                    break;
+                case 4:
+                    metodos.alterar();
                     break;
             }
-            System.out.println("1- Continuar; 2- Sair");
+            System.out.println("1- Continuar programa; 2- Sair");
             userInput= scan.nextInt();
         }
     }
