@@ -1,8 +1,6 @@
 package NIvelIntermediario.EstruturasDeDados.Listas;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -51,5 +49,24 @@ public class Main {
         System.out.println(stack);
 
         System.out.println(stack.peek());
+
+        // Queue, é uma fila, o primeiro a entrar é o primeiro a sair
+
+        Queue<String> queue= new LinkedList<>();
+        queue.add("Nome 1");
+        queue.add("Nome 2");
+        queue.add("Nome 3");
+        System.out.println("Queue: "+ queue);
+        queue.poll(); // retira o primeiro elemento inserido na fila
+        System.out.println("Queue after poll: "+queue);
+
+        // LinkedList, lista encadeada, melhor para inserção e remoção
+        LinkedList<String> strings= new LinkedList<>();
+        strings.add("Nome 1");
+        strings.add("Nome 2");
+        strings.add("Nome 3");
+
+        strings.add(2, "nome 4");
+        System.out.println(strings);
     }
 }
